@@ -15,7 +15,8 @@ require("dotenv").config();
 const paymentRoute = require('./routes/paymentRoute');
 app.use(paymentRoute);
 
-mongoose.connect('mongodb://127.0.0.1:27017/E-commerce-GLA')
+// mongoose.connect('mongodb://127.0.0.1:27017/E-commerce-GLA')
+mongoose.connect(process.env.dbURL)
 .then(()=>console.log("DB Connected."))
 .catch((err)=>console.log("Something Went Wrong!!"))
 
